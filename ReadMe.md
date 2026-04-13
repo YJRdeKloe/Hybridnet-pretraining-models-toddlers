@@ -26,20 +26,20 @@ Pretrained weights derived from a multi-view toddler home-recording dataset.
 
 The following 22 anatomical keypoints were annotated:
 
-- Nose  
-- Top of sternum  
-- Left eye, Right eye  
-- Left ear, Right ear  
-- Left shoulder, Right shoulder  
-- Left elbow, Right elbow  
-- Left wrist, Right wrist  
-- Left hip, Right hip  
-- Left knee, Right knee  
-- Left ankle, Right ankle  
-- Left heel, Right heel  
-- Left big toe, Right big toe  
+- Nose
+- Top of sternum
+- Left eye, Right eye
+- Left ear, Right ear
+- Left shoulder, Right shoulder
+- Left elbow, Right elbow
+- Left wrist, Right wrist
+- Left hip, Right hip
+- Left knee, Right knee
+- Left ankle, Right ankle
+- Left heel, Right heel
+- Left big toe, Right big toe
 
-Keypoints were annotated in all camera views. Only visible keypoints (e.g., keypoints not subject to occlusion) were annotated.
+Keypoints were annotated in all camera views. Only visible keypoints (i.e., not subject to occlusion) were annotated.
 
 #### Files
 - `HybridNet-medium.pth`
@@ -60,6 +60,7 @@ hybridnet-pretrained-models-toddlers/
 ├── contributing/
 │   └── how-do-I-contribute.md
 └── README.md
+```
 ---
 
 ## Purpose of This Repository
