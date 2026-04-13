@@ -1,41 +1,74 @@
-# Markerless 3D Posture Estimation Pipeline – HybridNet Pretraining Models
+# HybridNet Pretrained Models for Markerless 3D Toddler Posture Estimation
 
-This repository provides pretrained HybridNet models for markerless 3D full-body posture estimation of toddlers, developed as part of a camera-based multi-view motion capture study. These pretrained weights allow researchers to fine-tune HybridNet more efficiently for their own datasets—especially datasets involving toddlers, or other populations that differ from standard adult training data.
+This repository provides pretrained HybridNet model weights for markerless 3D full-body posture estimation of toddlers from synchronized multi-view video recordings.
 
-The models in this repository were validated in:
+The current release contains pretrained weights derived from toddler home-recording data, intended to support fine-tuning on new multi-view datasets.
 
-**De Kloe, Y. J. R., Hunnius, S., & Stapel, J. S.**
-*Markerless 3D Posture Estimation of Toddlers from Multi-View Video Recordings: Evaluating Accuracy, Precision, and Generalizability.* (Under review)
+---
+
+## Included Model Set
+
+### Toddlers_At_Home
+
+Pretrained weights derived from a multi-view toddler home-recording dataset.
+
+#### Dataset summary
+- 4 toddlers
+- 3 synchronized cameras
+- ~15-minute free-play recordings per child
+- 2000 annotated framesets in total
+- 500 annotated framesets per toddler
+- 22 body keypoints per frameset
+- 1600 framesets used for model training
+- 400 framesets held out for evaluation
+
+#### Body keypoints
+
+The following 22 anatomical keypoints were annotated:
+
+- Nose  
+- Top of sternum  
+- Left eye, Right eye  
+- Left ear, Right ear  
+- Left shoulder, Right shoulder  
+- Left elbow, Right elbow  
+- Left wrist, Right wrist  
+- Left hip, Right hip  
+- Left knee, Right knee  
+- Left ankle, Right ankle  
+- Left heel, Right heel  
+- Left big toe, Right big toe  
+
+Keypoints were annotated in all camera views. Only visible keypoints (e.g., keypoints not subject to occlusion) were annotated.
+
+#### Files
+- `HybridNet-medium.pth`
+- `EfficientTrack_Keypoints-medium.pth`
+- `EfficientTrack_Center-medium.pth`
 
 ---
 
 ## Repository Structure
 
-```
-Hybridnet-pretraining-models-toddlers/
-│
-├── pretraining-set/
-│   └── Lab_Toddlers/
+```text
+hybridnet-pretrained-models-toddlers/
+├── pretraining-sets/
+│   └── Toddlers_At_Home/
 │       ├── HybridNet-medium.pth
 │       ├── EfficientTrack_Keypoints-medium.pth
 │       └── EfficientTrack_Center-medium.pth
-│
 ├── contributing/
 │   └── how-do-I-contribute.md
-│
 └── README.md
-```
-
 ---
 
 ## Purpose of This Repository
 
-HybridNet is a powerful architecture, but training it from scratch requires many annotated frames. These toddler-specific pretrained models:
+HybridNet is a Convolutional Neural Network architecture, but training it from scratch requires many annotated framesets. These toddler-specific pretrained models:
 
-* Provide strong initial weights for child movement patterns
 * Reduce training time and the number of frames needed
 * Improve accuracy when fine-tuning on new child datasets
-* Enable a community-driven improvement cycle: users can contribute their fine-tuned models back to help expand robustness across contexts
+* Facilitate reproducible and comparable use of markerless 3D posture estimation in developmental research
 
 ---
 
@@ -78,14 +111,21 @@ This helps the model become increasingly robust across different labs, home envi
 
 If you use these pretrained weights, please cite:
 
-```
-De Kloe, Y. J. R., Hunnius, S., & Stapel, J. S. (under review).
-Markerless 3D Posture Estimation of Toddlers from Multi-View Video Recordings: Evaluating Accuracy, Precision, and Generalizability.
-```
+-This repository
 
-And the official JARVIS Toolkit documentation.
+-The official JARVIS Toolkit documentation.
+
+-(Article references will be made public here upon publication)
 
 ---
+
+##Notes
+
+-The original video data are not shared due to privacy and ethical considerations.
+
+-These models were trained on multi-view recordings of young children and may not generalize to adult datasets without additional fine-tuning.
+
+-Additional pretrained model sets will be released in future updates.
 
 ## Acknowledgments
 
