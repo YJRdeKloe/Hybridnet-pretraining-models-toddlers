@@ -120,7 +120,7 @@ If you use these pretrained weights, please cite:
 
 ---
 
-##Notes
+## Notes
 
 -The original video data are not shared due to privacy and ethical considerations.
 
